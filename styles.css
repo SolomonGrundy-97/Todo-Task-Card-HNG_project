@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.badge {
+  padding: 5px 10px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 12px;
+}
+
+.badge.high {
+  background: #e53935;
+  margin-right: 3px;
+}
+.badge.low {
+  background: #b5d68e;
+}
+.badge.medium {
+  background: #dbd144;
+  margin-right: 3px;
+}
+
+.meta {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 10px 0;
+}
+
+.tags li {
+  background: #4CAF50;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:first-child {
+  background: #1976d2;
+  color: #fff;
+}
+
+button:last-child {
+  background: #e53935;
+  color: #fff;
+}
+
+button:focus {
+  outline: 2px solid black;
+}
+
+/* COMPLETED STATE */
+.completed h2 {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .card {
+    padding: 15px;
+  }
+}

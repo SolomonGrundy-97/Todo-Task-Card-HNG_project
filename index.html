@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Todo Card</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<main class="container">
+
+  <article data-testid="test-todo-card" class="card">
+
+    <!-- HEADER -->
+    <header class="card-header">
+      <h2 data-testid="test-todo-title" id="todo-title">
+        Todo Task Card
+      </h2>
+
+      <span data-testid="test-todo-priority" class="badge high" aria-label="High priority">
+        High
+      </span>
+      <span data-testid="test-todo-priority" class="badge medium" aria-label="Medium priority">
+        Medium
+      </span>
+      <span data-testid="test-todo-priority" class="badge low" aria-label="Low priority">
+        Low
+      </span>
+    </header>
+
+    <!-- DESCRIPTION -->
+    <p data-testid="test-todo-description">
+      Complete the frontend task with accessibility and responsiveness.
+    </p>
+
+    <!-- META -->
+    <div class="meta">
+      <time 
+        data-testid="test-todo-due-date"
+        datetime="2026-03-01T18:00:00Z"
+      >
+        Due Mar 1, 2026
+      </time>
+
+      <time 
+        data-testid="test-todo-time-remaining"
+        id="time-remaining"
+        aria-live="polite"
+      >
+      </time>
+    </div>
+
+    <!-- STATUS -->
+    <div class="status-row">
+      <span data-testid="test-todo-status" id="status">
+        Pending
+      </span>
+
+      <div class="checkbox-wrapper">
+        <input
+          type="checkbox"
+          id="complete"
+          data-testid="test-todo-complete-toggle"
+        />
+        <label for="complete">Mark as done</label>
+      </div>
+    </div>
+
+    <!-- TAGS -->
+    <ul data-testid="test-todo-tags" role="list" class="tags">
+      <li data-testid="test-todo-tag-work">work</li>
+      <li data-testid="test-todo-tag-urgent">urgent</li>
+      <li>design</li>
+    </ul>
+
+    <!-- ACTIONS -->
+    <div class="actions">
+      <button data-testid="test-todo-edit-button">Edit</button>
+      <button data-testid="test-todo-delete-button">Delete</button>
+    </div>
+
+  </article>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
