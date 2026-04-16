@@ -23,8 +23,10 @@ body {
   padding: 20px;
   border-radius: 12px;
   width: 100%;
+  transition: all 0.3s ease;
 }
 
+/* HEADER */
 .card-header {
   display: flex;
   justify-content: space-between;
@@ -32,6 +34,7 @@ body {
   margin-bottom: 1.5rem;
 }
 
+/* PRIORITY */
 .badge {
   padding: 5px 10px;
   border-radius: 8px;
@@ -41,30 +44,70 @@ body {
 
 .badge.high {
   background: #e53935;
-  margin-right: 3px;
-}
-.badge.low {
-  background: #b5d68e;
-}
-.badge.medium {
-  background: #dbd144;
-  margin-right: 3px;
 }
 
+.badge.medium {
+  background: #dbd144;
+}
+
+.badge.low {
+  background: #4CAF50;
+}
+
+/* PRIORITY INDICATOR */
+#priority-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: 8px;
+  display: inline-block;
+}
+
+.high-indicator {
+  background: #e53935;
+}
+
+.medium-indicator {
+  background: #dbd144;
+}
+
+.low-indicator {
+  background: #4CAF50;
+}
+
+/* META */
 .meta {
   margin: 10px 0;
   display: flex;
   justify-content: space-between;
   font-size: 14px;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 
+/* STATUS */
 .status-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 10px 0;
+  gap: 10px;
 }
 
+/* STATUS STATES */
+.card.in-progress {
+  border-left: 5px solid #1976d2;
+}
+
+.completed {
+  opacity: 0.7;
+}
+
+.completed h2 {
+  text-decoration: line-through;
+}
+
+/* TAGS */
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -81,12 +124,14 @@ body {
   font-size: 12px;
 }
 
+/* ACTIONS */
 .actions {
   display: flex;
   gap: 10px;
   margin-top: 10px;
 }
 
+/* BUTTONS */
 button {
   flex: 1;
   padding: 10px;
@@ -109,15 +154,57 @@ button:focus {
   outline: 2px solid black;
 }
 
-/* COMPLETED STATE */
-.completed h2 {
-  text-decoration: line-through;
-  opacity: 0.6;
+/* OVERDUE */
+#overdue {
+  color: red;
+  font-weight: bold;
+}
+
+/* COLLAPSIBLE */
+#desc-section {
+  max-height: 60px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+/* EDIT FORM */
+.hidden {
+  display: none;
+}
+
+#edit-form {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#edit-form input,
+#edit-form textarea,
+#edit-form select {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* FORM BUTTONS */
+#edit-form .actions {
+  display: flex;
+  gap: 10px;
 }
 
 /* RESPONSIVE */
 @media (max-width: 480px) {
   .card {
     padding: 15px;
+  }
+
+  .status-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .meta {
+    flex-direction: column;
   }
 }
